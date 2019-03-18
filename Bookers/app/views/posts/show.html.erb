@@ -1,7 +1,12 @@
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+
 <h2>Title</h2>
 <p><%= @post.title %></p>
 <h2>Body</h2>
 <p><%= @post.body %></p>
 
+
 <%= link_to "Edit", edit_post_path(@post.id) %>
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path, class: "back" %>

@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <h1>Editing Book</h1>
 <%= form_for(@post) do |f| %>
     <h4>Title</h4>
@@ -7,4 +11,4 @@
     <%= f.submit 'Update Book' %>
 <% end %>
 <%= link_to 'Show', posts_path %>
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path, class: "back" %>

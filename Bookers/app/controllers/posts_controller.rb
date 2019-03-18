@@ -5,8 +5,12 @@ class PostsController < ApplicationController
 
   def create
          post = Post.new(post_params)
-         post.save
-         redirect_to @post
+         if post.save
+         	flash[:notice] = "Book was successfully created."
+         redirect_to post_path(post.id)
+     else
+     	render action: :new
+     end
   end
 
   def update
@@ -30,14 +34,22 @@ end
 
   def update
         post = Post.find(params[:id])
-        post.update(post_params)
+        if post.update(post_params)
+        	flash[:notice] = "Book was successfully updated."
         redirect_to post_path(post.id)
+    else
+    	render action: :new
+    end
   end
 
   def destroy
         post = Post.find(params[:id])
-        post.destroy
+        if post.destroy
+        	flash[:notice] = "Book was successfully destroyed."
         redirect_to posts_path
+    else
+    	render action: :new
+    end
   end
 
 
