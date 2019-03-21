@@ -10,5 +10,5 @@
     <%= f.text_area :body, class: "book_body" %>
     <%= f.submit 'Update Book' %>
 <% end %>
-<%= link_to 'Show', posts_path, class: 'show_#posts{id}' %>
+<%= link_to 'Show', post_path, class: "show_#{@post.id}" %>
 <%= link_to 'Back', posts_path, class: "back" %>

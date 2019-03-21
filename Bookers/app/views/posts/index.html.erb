@@ -14,9 +14,9 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.body %></td>
-      <td><%= link_to 'Show', post, class: "show_#posts{id}" %></td>
-      <td><%= link_to 'Edit', edit_post_path(post), class: "edit_#posts{id}" %></td>
-      <td><%= link_to 'Destroy', post_path(post), class: "destroy_#posts{id}",
+      <td><%= link_to 'Show', post_path(post), class: "show_#{post.id}" %></td>
+      <td><%= link_to 'Edit', edit_post_path(post), class: "edit_#{post.id}" %></td>
+      <td><%= link_to 'Destroy', post_path(post), class: "destroy_#{post.id}",
                 method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
